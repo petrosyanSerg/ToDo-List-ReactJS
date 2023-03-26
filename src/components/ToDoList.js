@@ -1,18 +1,17 @@
 import Item from "./Items";
 
-function ToDoList({ toDoList, deleteItem, changeCheked }) {
-  return (
-    <div className="list">
-      {toDoList.map((elem) => (
-        <Item
-          key={elem.id}
-          todo={elem}
-          deleteItem={deleteItem}
-          changeCheked={changeCheked}
-        />
-      ))}
-    </div>
-  );
+function ToDoList({ Todos, dispatch }) {
+	return (
+		<div className="list">
+			{Todos.map((elem) => (
+				<Item
+					key={elem.id}
+					todo={elem}
+					dispatch={dispatch}
+				/>
+			))}
+		</div>
+	);
 }
 
 export default ToDoList;
